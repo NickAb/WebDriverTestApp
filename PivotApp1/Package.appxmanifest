@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest"
+         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest"
+         xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest"
+         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="18f9c29c-84de-4742-a64a-3d4f0c733725"
+            Publisher="CN=n.abalov"
+            Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="297667a5-bab1-4ec8-9fdf-62d3fd1dfcfa"
+                    PhonePublisherId="eb4accb9-7c72-4f5a-a540-93b66ce9d231"/>
+
+  <Properties>
+    <DisplayName>PivotApp1</DisplayName>
+    <PublisherDisplayName>n.abalov</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+                 Executable="AGHost.exe"
+                 EntryPoint="MainPage.xaml">
+      <m3:VisualElements
+          DisplayName="PivotApp1"
+          Square150x150Logo="Assets\SquareTile150x150.png"
+          Square44x44Logo="Assets\Logo.png"
+          Description="PivotApp1"
+          ForegroundText="light"
+          BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png"/>
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+      </m3:VisualElements>
+
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+          <BackgroundTasks>
+          <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+
+    </Application>
+  </Applications>
+  <Capabilities>
+  </Capabilities>
+
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+
+</Package>
