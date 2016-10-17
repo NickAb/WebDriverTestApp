@@ -94,10 +94,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
     <Compile Include="CommandEnvironment.cs" />
-    <Compile Include="CommandHandlers\Class1.cs" />
+    <Compile Include="CommandHandlers\GetElementTextCommandHandler.cs" />
     <Compile Include="CommandHandlers\GetTitleCommandHandler.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="ProtocolValueJsonConverter.cs" />
@@ -115,6 +113,8 @@
     </Compile>
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="WebDriverAtoms.cs" />
+    <Compile Include="WebDriverStatusCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
